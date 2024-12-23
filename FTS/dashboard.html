@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+
+    <section id="dashboard">
+        <h2>Expense Logging</h2>
+        <form id="expense-form" onsubmit="logExpense(); return false;">
+            <label for="expense-amount">Amount:</label>
+            <input type="number" id="expense-amount" name="expense-amount" required>
+            <label for="expense-description">Description:</label>
+            <input type="text" id="expense-description" name="expense-description" required>
+            <label for="expense-date">Date:</label>
+            <input type="date" id="expense-date" name="expense-date" required>
+            <button type="submit">Log Expense</button>
+        </form>
+
+        <h2>Monthly Reports</h2>
+        <canvas id="expense-chart"></canvas>
+
+        <h2>Bill Payment Reminders</h2>
+        <form id="reminder-form" onsubmit="setReminder(); return false;">
+            <label for="reminder-description">Description:</label>
+            <input type="text" id="reminder-description" name="reminder-description" required>
+            <label for="reminder-date">Due Date:</label>
+            <input type="date" id="reminder-date" name="reminder-date" required>
+            <button type="submit">Set Reminder</button>
+        </form>
+
+        <h2>Goal Setting and Tracking</h2>
+        <form id="goal-form" onsubmit="setGoal(); return false;">
+            <label for="goal-description">Goal:</label>
+            <input type="text" id="goal-description" name="goal-description" required>
+            <label for="goal-amount">Amount:</label>
+            <input type="number" id="goal-amount" name="goal-amount" required>
+            <label for="goal-deadline">Deadline:</label>
+            <input type="date" id="goal-deadline" name="goal-deadline" required>
+            <button type="submit">Set Goal</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Personal Finance Tracker</p>
+    </footer>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Firebase Initialization Scripts -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBAfx48Ge0UGyJDpVzMI02OuhYUyqFAd-A",
+            authDomain: "fts-project-2350a.firebaseapp.com",
+            projectId: "fts-project-2350a",
+            storageBucket: "fts-project-2350a.appspot.com",
+            messagingSenderId: "814785421417",
+            appId: "1:814785421417:web:35a0e04db23fe9352582f8",
+            measurementId: "G-XR70MMNGK9"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <script src="dashboard.js" type="module"></script>
+</body>
+</html>

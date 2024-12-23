@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Personal Finance Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#signup">Sign Up</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="features">
+        <h2>Key Features</h2>
+        <ul>
+            <li>Expense Logging</li>
+            <li>Monthly Reports with Graphs</li>
+            <li>Bill Payment Reminders</li>
+            <li>Goal Setting and Tracking</li>
+        </ul>
+    </section>
+
+    <section id="testimonials">
+        <h2>User Testimonials</h2>
+        <blockquote>
+            "This app has transformed the way I manage my finances!"
+        </blockquote>
+        <blockquote>
+            "Simple, intuitive, and effective. Highly recommend!"
+        </blockquote>
+    </section>
+
+    <section id="signup">
+        <h2>Sign Up</h2>
+        <p>Create an account to start tracking your finances.</p>
+        <form onsubmit="signUp(); return false;">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required>
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phone-number" name="phone-number" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+
+    <section id="login">
+        <h2>Login</h2>
+        <p>Already have an account? Log in here.</p>
+        <form onsubmit="login(); return false;">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="email" required>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="dashboard" style="display:none;">
+        <h2>Dashboard</h2>
+        <p>Welcome to your dashboard!</p>
+        <!-- Add more dashboard content here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Personal Finance Tracker</p>
+    </footer>
+
+    <!-- Firebase Initialization Scripts -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBAfx48Ge0UGyJDpVzMI02OuhYUyqFAd-A",
+            authDomain: "fts-project-2350a.firebaseapp.com",
+            projectId: "fts-project-2350a",
+            storageBucket: "fts-project-2350a.appspot.com",
+            messagingSenderId: "814785421417",
+            appId: "1:814785421417:web:35a0e04db23fe9352582f8",
+            measurementId: "G-XR70MMNGK9"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <script src="auth.js" type="module"></script>
+</body>
+</html>
